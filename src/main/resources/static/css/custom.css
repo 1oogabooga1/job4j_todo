@@ -1,0 +1,18 @@
+.big-checkbox {
+    transform: scale(1.8);
+    transform-origin: left top;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.form-check-input {
+    width: 1rem;       /* размер квадратика */
+    height: 1rem;
+    vertical-align: middle;  /* выравнивание по вертикали */
+}
+
+.form-check-label {
+    font-size: 1.25rem;   /* размер текста */
+    line-height: 2rem;   /* выравнивание по центру с чекбоксом */
+    margin-left: 1rem; /* отступ текста от квадрата */
+}
