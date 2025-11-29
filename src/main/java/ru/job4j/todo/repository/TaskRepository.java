@@ -13,8 +13,6 @@ public interface TaskRepository {
 
     void deleteTask(int id);
 
-    void doneTask(int id);
-
     boolean editTask(Task task, int id);
 
     List<Task> getAllTasks();
