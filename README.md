@@ -36,9 +36,57 @@ This project allows users to create, edit, delete, and track tasks with a clean 
 - Bootstrap 5
 - Maven
 
+## Requirements
+
+To run this project, make sure you have installed:
+
+| Technology | Version |
+|-----------|---------|
+| **Java** | 17+ |
+| **Maven** | 3.6+ |
+| **PostgreSQL** | 14+ |
+| **Git** | any |
+| **IDE (optional)** | IntelliJ IDEA / Eclipse / VS Code |
+
+---
+
+## Environment Setup
+
+### 1️ Clone the repository
+```bash
+git clone https://github.com/1oogabooga1/job4j_todo.git
+cd job4j_todo
+ ```
+### 2️ Configure PostgreSQL database
+Create a database: 
+```bash
+CREATE DATABASE todo;
+```
+### 3️ Database Migrations (Liquibase)
+To run migrations manually:
+```bash
+mvn liquibase:update
+```
+
+## Launch the Application
+Start the Spring Boot app:
+```bash
+mvn spring-boot:run
+```
+
+##  Application URLs
+
+| Page               | URL                                     |
+|--------------------|-------------------------------------------|
+| All tasks          | http://localhost:8080/tasks/list          |
+| Create task        | http://localhost:8080/tasks/create        |
+| New tasks          | http://localhost:8080/tasks/newTasks      |
+| Completed tasks    | http://localhost:8080/tasks/doneTasks     |
+
 ## Screenshots
   <img width="1433" height="446" alt="image" src="https://github.com/user-attachments/assets/71a9b357-2b5b-47d7-8e60-cc22037927ad" />
+  
 
 <img width="1435" height="822" alt="image" src="https://github.com/user-attachments/assets/45218e27-e6e7-4dc8-9d84-e78a19cefcac" />
 
-  
+
