@@ -1,6 +1,5 @@
 package ru.job4j.todo.controller;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -69,7 +68,11 @@ public class TaskController {
 
     @GetMapping("/delete/{id}")
     public String delete(Model model, @PathVariable int id) {
-        service.deleteTask(id);
+        boolean result = service.deleteTask(id);
+        if (!result) {
+            model.addAttribute("message", "Некорректный номер задания");
+            return "errors/404";
+        }
         return "redirect:/tasks/list";
     }
 }
