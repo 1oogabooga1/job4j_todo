@@ -8,9 +8,15 @@
           enctype="multipart/form-data">
         <input type="hidden" name="id" th:field="*{id}">
         <div class="mb-3">
+            <label for="name" class="form-label"><b>Название</b></label>
+            <input type="text" class="form-control" id="name" name="name"
+            th:field="*{name}"
+            placeholder="Название задачи">
+        </div>
+        <div class="mb-3">
             <label for="description" class="form-label"><b>Описание</b></label>
             <textarea class="form-control" id="description" name="description"
-                      th:field="*{description}" rows="25" placeholder="Описание задачи"></textarea>
+                      th:field="*{description}" rows="20" placeholder="Описание задачи"></textarea>
         </div>
         <div class="mb-3 row">
             <div class="col-6"></div>
