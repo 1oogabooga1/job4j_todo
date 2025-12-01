@@ -66,6 +66,16 @@ public class TaskController {
         return "redirect:/tasks/list";
     }
 
+    @GetMapping("/doneTask/{id}")
+    public String doneTask(Model model, @PathVariable int id) {
+        boolean result = service.doneTask(true, id);
+        if (!result) {
+            model.addAttribute("message", "The task is already done");
+            return "errors/404";
+        }
+        return "redirect:/tasks/list";
+    }
+
     @GetMapping("/delete/{id}")
     public String delete(Model model, @PathVariable int id) {
         boolean result = service.deleteTask(id);

@@ -37,6 +37,11 @@ public class SimpleTaskService implements TaskService {
     }
 
     @Override
+    public boolean doneTask(boolean done, int id) {
+        return taskRepository.doneTask(done, id);
+    }
+
+    @Override
     public List<Task> getAllTasks() {
         return taskRepository.getAllTasks();
     }

@@ -26,14 +26,12 @@
                     <div class="col-4">
                         <button class="btn btn-success w-100" type="submit">Редактировать</button>
                     </div>
-
+                    <div class="col-4">
+                        <a class="btn btn-primary w-100"
+                           th:href="@{/tasks/doneTask/{id}(id=${task.id})}" >Выполнено</a>
+                    </div>
                     <div class="col-4"><a class="btn btn-danger w-100"
                                           th:href="@{/tasks/delete/{id}(id=${task.id})}">Удалить</a>
-                    </div>
-
-                    <div class="form-check mb-3">
-                        <input type="checkbox" name="done" class="form-check-input big-checkbox" id="done">
-                        <label class="form-check-label" for="done">Выполнено</label>
                     </div>
                 </div>
             </div>

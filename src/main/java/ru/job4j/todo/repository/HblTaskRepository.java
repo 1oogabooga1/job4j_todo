@@ -92,6 +92,26 @@ public class HblTaskRepository implements TaskRepository {
     }
 
     @Override
+    public boolean doneTask(boolean done, int id) {
+        Session session = sessionFactory.openSession();
+        boolean result = false;
+        try {
+            session.beginTransaction();
+            result = session.createQuery("UPDATE Task SET done = :done WHERE id = :id AND done <> :done")
+                    .setParameter("done", done)
+                    .setParameter("id", id)
+                    .executeUpdate() != 0;
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            session.getTransaction().rollback();
+            log.error("Error occurred during update a task", e);
+        } finally {
+            session.close();
+        }
+        return result;
+    }
+
+    @Override
     public List<Task> getAllTasks() {
         try (Session session = sessionFactory.openSession()) {
             return session.createQuery("FROM Task", Task.class).list();

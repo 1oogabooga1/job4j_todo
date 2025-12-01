@@ -14,6 +14,8 @@ public interface TaskService {
 
     boolean editTask(Task task, int id);
 
+    boolean doneTask(boolean done, int id);
+
     List<Task> getAllTasks();
 
     List<Task> getNewOrDoneTasks(boolean done);
