@@ -10,7 +10,7 @@ public interface TaskService {
 
     Optional<Task> findById(int id);
 
-    void deleteTask(int id);
+    boolean deleteTask(int id);
 
     boolean editTask(Task task, int id);
 
