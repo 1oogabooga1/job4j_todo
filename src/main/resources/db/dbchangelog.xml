@@ -10,4 +10,6 @@
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <include file="db/scripts/001_ddl_create_table_tasks.sql"/>
     <include file="db/scripts/002_dml_alter_table_tasks_add_column_name.sql"/>
+    <include file="db/scripts/003_ddl_create_table_todo_user.sql"/>
+
 </databaseChangeLog>
