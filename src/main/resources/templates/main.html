@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header :: header"></head>
+<body>
+<div th:insert="fragments/navigation :: navigation"></div>
+<div class="container mt-5">
+    <div class="card shadow-sm p-4" style="border-radius: 12px;">
+        <h3 class="mb-3">About the Project</h3>
+        <p class="text-muted">
+            A simple task-tracking web application built with
+            <strong>Java</strong>, <strong>Spring MVC</strong>, <strong>Hibernate</strong>,
+            <strong>Thymeleaf</strong>, and <strong>PostgreSQL</strong>.
+        </p>
+        <p class="text-muted">
+            The application allows users to create, edit, complete, and delete tasks through
+            a clean and intuitive interface.
+        </p>
+        <p class="text-muted">
+            This project demonstrates a classic full-stack MVC architecture:
+            <em>controller → service → repository → database</em>, with
+            server-side rendering and session-based interaction.
+        </p>
+    </div>
+</div>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+</html>
