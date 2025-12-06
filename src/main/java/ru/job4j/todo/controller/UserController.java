@@ -28,13 +28,12 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute User user, Model model, HttpServletRequest request) {
-        var userOptional = userService.create(user);
-        if (userOptional.isEmpty()) {
-            model.addAttribute("message", "user with the same e-mail already exists");
+        var created = userService.create(user);
+        if (created.isEmpty()) {
+            model.addAttribute("message", "User already exists");
             return "errors/404";
         }
-        var session = request.getSession();
-        session.setAttribute("user", userOptional.get());
+        request.getSession().setAttribute("user", created.get());
         return "redirect:/tasks/list";
     }
 

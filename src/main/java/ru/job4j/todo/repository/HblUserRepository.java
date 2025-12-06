@@ -3,46 +3,38 @@ package ru.job4j.todo.repository;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.stereotype.Repository;
 import ru.job4j.todo.model.User;
 
+import java.util.Map;
 import java.util.Optional;
 
 @Repository
 @Slf4j
 public class HblUserRepository implements UserRepository {
 
-    private final SessionFactory sessionFactory;
+    private final CrudRepository crudRepository;
 
-    public HblUserRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public HblUserRepository(CrudRepository crudRepository) {
+        this.crudRepository = crudRepository;
     }
 
     @Override
     public Optional<User> create(User user) {
-        Session session = sessionFactory.openSession();
         Optional<User> result = Optional.empty();
         try {
-            session.beginTransaction();
-            session.save(user);
-            session.getTransaction().commit();
+            crudRepository.run(session -> session.save(user));
             result = Optional.of(user);
-        } catch (Exception e) {
-            session.getTransaction().rollback();
-            log.error("Some error during saving new User happened", e);
-        } finally {
-            session.close();
+        } catch (IllegalStateException e) {
+            log.error("Some error occurred during saving new user", e);
         }
         return result;
     }
 
     @Override
     public Optional<User> findByLoginAndPassword(String login, String password) {
-        try (Session session = sessionFactory.openSession()) {
-           return Optional.ofNullable(session.createQuery("FROM User u WHERE u.login = :login AND u.password = :password", User.class)
-                   .setParameter("login", login)
-                   .setParameter("password", password)
-                   .uniqueResult());
-        }
+        return crudRepository.optional("FROM User WHERE login = :login AND password = :password", User.class,
+                Map.of("login", login, "password", password));
     }
 }
