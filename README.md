@@ -11,7 +11,7 @@ This project allows users to create, edit, delete, and track tasks with a clean 
   - Delete tasks.
 
 - Task Status:
-  - Display task status as "Completed" or "Not Completed".
+  - Display task status as "Completed" or "In process".
 
 - Task Listing:
   - View all tasks or filter by completed / new tasks.
