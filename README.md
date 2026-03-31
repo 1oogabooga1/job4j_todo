@@ -84,9 +84,22 @@ mvn spring-boot:run
 | Completed tasks    | http://localhost:8080/tasks/doneTasks     |
 
 ## Screenshots
-  <img width="1433" height="446" alt="image" src="https://github.com/user-attachments/assets/71a9b357-2b5b-47d7-8e60-cc22037927ad" />
-  
+<img width="1439" height="560" alt="image" src="https://github.com/user-attachments/assets/48ebe1df-e056-481d-8f08-768009b7732e" />
 
-<img width="1435" height="822" alt="image" src="https://github.com/user-attachments/assets/45218e27-e6e7-4dc8-9d84-e78a19cefcac" />
+<img width="1439" height="547" alt="Снимок экрана 2026-03-31 в 12 21 25" src="https://github.com/user-attachments/assets/053ccc05-6765-40db-a7ee-2e8da5c28a94" />
+
+<img width="1440" height="596" alt="Снимок экрана 2026-03-31 в 12 24 16" src="https://github.com/user-attachments/assets/f6d346ef-cf6e-41f5-8f98-964bbfd5d4f7" />
+
+<img width="1440" height="806" alt="Снимок экрана 2026-03-31 в 12 22 30" src="https://github.com/user-attachments/assets/0c994a96-d782-43b1-8029-a9df0d9f99d3" />
+
+<img width="1439" height="541" alt="Снимок экрана 2026-03-31 в 12 23 59" src="https://github.com/user-attachments/assets/78591174-dea2-4c08-8275-5f279583098b" />
+
+<img width="1440" height="530" alt="Снимок экрана 2026-03-31 в 12 23 21" src="https://github.com/user-attachments/assets/636171a6-a3d1-4724-98d8-54ae4e56b0c7" />
+
+<img width="1440" height="529" alt="Снимок экрана 2026-03-31 в 12 24 04" src="https://github.com/user-attachments/assets/354f71c1-5afe-43a2-860a-0997d3981585" />
+
+<img width="1437" height="390" alt="Снимок экрана 2026-03-31 в 12 24 36" src="https://github.com/user-attachments/assets/66f2a2d2-99ef-4af7-8f83-64a465cfe5ff" />
+
+<img width="1439" height="424" alt="Снимок экрана 2026-03-31 в 12 25 04" src="https://github.com/user-attachments/assets/a3ba02aa-64dc-43bd-9471-6c8bdb72e1e1" />
 
 
