@@ -4,7 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.todo.model.Task;
+import ru.job4j.todo.model.User;
 import ru.job4j.todo.service.TaskService;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/tasks")
@@ -28,7 +31,9 @@ public class TaskController {
     }
 
     @PostMapping("/create")
-    public String createTask(@ModelAttribute Task task) {
+    public String createTask(@ModelAttribute Task task, HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("user");
+        task.setUser(user);
         service.createNewTask(task);
         return "redirect:/tasks/list";
     }

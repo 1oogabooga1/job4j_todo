@@ -10,44 +10,44 @@ import java.util.Optional;
 @Service
 public class SimpleTaskService implements TaskService {
 
-    private final TaskRepository taskRepository;
+    private final TaskRepository hblTaskRepository;
 
-    public SimpleTaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+    public SimpleTaskService(TaskRepository hblTaskRepository) {
+        this.hblTaskRepository = hblTaskRepository;
     }
 
     @Override
     public Task createNewTask(Task task) {
-        return taskRepository.createNewTask(task);
+        return hblTaskRepository.createNewTask(task);
     }
 
     @Override
     public Optional<Task> findById(int id) {
-        return taskRepository.findById(id);
+        return hblTaskRepository.findById(id);
     }
 
     @Override
     public boolean deleteTask(int id) {
-        return taskRepository.deleteTask(id);
+        return hblTaskRepository.deleteTask(id);
     }
 
     @Override
     public boolean editTask(Task task, int id) {
-        return taskRepository.editTask(task, id);
+        return hblTaskRepository.editTask(task, id);
     }
 
     @Override
     public boolean doneTask(boolean done, int id) {
-        return taskRepository.doneTask(done, id);
+        return hblTaskRepository.doneTask(done, id);
     }
 
     @Override
     public List<Task> getAllTasks() {
-        return taskRepository.getAllTasks();
+        return hblTaskRepository.getAllTasks();
     }
 
     @Override
     public List<Task> getNewOrDoneTasks(boolean done) {
-        return taskRepository.getNewOrDoneTasks(done);
+        return hblTaskRepository.getNewOrDoneTasks(done);
     }
 }

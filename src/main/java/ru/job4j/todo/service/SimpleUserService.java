@@ -1,7 +1,6 @@
 package ru.job4j.todo.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.stereotype.Service;
 import ru.job4j.todo.model.User;
 import ru.job4j.todo.repository.UserRepository;
@@ -14,8 +13,8 @@ public class SimpleUserService implements UserService {
 
     private final UserRepository repository;
 
-    public SimpleUserService(UserRepository repository) {
-        this.repository = repository;
+    public SimpleUserService(UserRepository hblUserRepository) {
+        this.repository = hblUserRepository;
     }
 
     @Override

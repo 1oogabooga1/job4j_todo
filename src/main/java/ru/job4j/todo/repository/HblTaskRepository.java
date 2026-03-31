@@ -29,7 +29,7 @@ public class HblTaskRepository implements TaskRepository {
 
     @Override
     public boolean deleteTask(int id) {
-        return crudRepository.run("DELETE FROM Task WHERE id = :id", Map.of("id", id)) > 1;
+        return crudRepository.run("DELETE FROM Task WHERE id = :id", Map.of("id", id)) > 0;
     }
 
     @Override
@@ -42,7 +42,7 @@ public class HblTaskRepository implements TaskRepository {
                 Map.of("name", task.getName(),
                 "description", task.getDescription(),
                 "done", task.isDone(),
-                "id", id)) > 1;
+                "id", id)) > 0;
     }
 
     @Override
