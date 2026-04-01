@@ -8,15 +8,15 @@
           enctype="multipart/form-data">
         <input type="hidden" name="id" th:field="*{id}">
         <div class="mb-3">
-            <label for="name" class="form-label"><b>Название</b></label>
+            <label for="name" class="form-label"><b>Title</b></label>
             <input type="text" class="form-control" id="name" name="name"
             th:field="*{name}"
-            placeholder="Название задачи">
+            placeholder="Task title">
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label"><b>Описание</b></label>
+            <label for="description" class="form-label"><b>Description</b></label>
             <textarea class="form-control" id="description" name="description"
-                      th:field="*{description}" rows="20" placeholder="Описание задачи"></textarea>
+                      th:field="*{description}" rows="20" placeholder="Task description"></textarea>
         </div>
         <div class="mb-3 row">
             <div class="col-6"></div>
@@ -24,14 +24,14 @@
                 <div class="row">
 
                     <div class="col-4">
-                        <button class="btn btn-success w-100" type="submit">Редактировать</button>
+                        <button class="btn btn-success w-100" type="submit">Edit</button>
                     </div>
                     <div class="col-4">
                         <a class="btn btn-primary w-100"
-                           th:href="@{/tasks/doneTask/{id}(id=${task.id})}" >Выполнено</a>
+                           th:href="@{/tasks/doneTask/{id}(id=${task.id})}" >Complete</a>
                     </div>
                     <div class="col-4"><a class="btn btn-danger w-100"
-                                          th:href="@{/tasks/delete/{id}(id=${task.id})}">Удалить</a>
+                                          th:href="@{/tasks/delete/{id}(id=${task.id})}">Delete</a>
                     </div>
                 </div>
             </div>

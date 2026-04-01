@@ -4,15 +4,17 @@
 <body>
 <div th:replace="fragments/navigation :: navigation"></div>
 <div class="container mt-4">
-    <h2>Выполненные задания</h2>
+    <h2>Completed tasks</h2>
     <div class="row">
         <table class="table table-striped">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Название</th>
-                <th scope="col">Дата создания</th>
-                <th scope="col">Состояние</th>
+                <th scope="col">Title</th>
+                <th scope="col">Creation date</th>
+                <th scope="col">Status</th>
+                <th scope="col">User name</th>
+
             </tr>
             </thead>
             <tbody>
@@ -22,7 +24,8 @@
                         th:href="@{/tasks/{taskId}(taskId=${task.id})}"></a>
                 </td>
                 <td th:text="${#temporals.format(task.created, 'dd.MM.yyyy HH:mm')}"></td>
-                <td th:text="${task.done} ? 'Выполнено' : 'Не выполнено'"></td>
+                <td th:text="${task.done} ? 'Completed' : 'In process'"></td>
+                <td th:text="${task.user.name}"></td>
             </tr>
             </tbody>
         </table>
@@ -30,7 +33,7 @@
     <div class="mb-3">
         <div class="row">
             <div class="col-12 d-flex justify-content-end">
-                <a th:href="@{/tasks/create}" class="btn btn-primary">Добавить задание</a>
+                <a th:href="@{/tasks/create}" class="btn btn-primary">Add new task</a>
             </div>
         </div>
     </div>
