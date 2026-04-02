@@ -14,6 +14,7 @@
                 <th scope="col">Creation date</th>
                 <th scope="col">Status</th>
                 <th scope="col">User name</th>
+                <th scope="col">Priority</th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +26,7 @@
                 <td th:text="${#temporals.format(task.created, 'dd.MM.yyyy HH:mm')}"></td>
                 <td th:text="${task.done} ? 'Complete' : 'In process'"></td>
                 <td th:text="${task.user.name}"></td>
+                <td th:text="${task.priority.name}"></td>
             </tr>
             </tbody>
         </table>

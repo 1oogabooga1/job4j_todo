@@ -24,12 +24,12 @@ public class HblTaskRepository implements TaskRepository {
 
     @Override
     public Optional<Task> findById(int id) {
-        return crudRepository.optional("FROM Task WHERE id = :id", Task.class, Map.of("id", id));
+        return crudRepository.optional("FROM Task t JOIN FETCH t.priority WHERE t.id = :id", Task.class, Map.of("id", id));
     }
 
     @Override
     public boolean deleteTask(int id) {
-        return crudRepository.run("DELETE FROM Task WHERE id = :id", Map.of("id", id)) > 0;
+        return crudRepository.run("DELETE FROM Task t WHERE t.id = :id", Map.of("id", id)) > 0;
     }
 
     @Override
@@ -37,28 +37,30 @@ public class HblTaskRepository implements TaskRepository {
         return crudRepository.run("UPDATE Task SET "
                 + "name = :name, "
                 + "description = :description, "
-                + "done = :done "
+                + "done = :done, "
+                + "priority = :priority "
                 + "WHERE id = :id",
                 Map.of("name", task.getName(),
                 "description", task.getDescription(),
                 "done", task.isDone(),
+                "priority", task.getPriority(),
                 "id", id)) > 0;
     }
 
     @Override
     public boolean doneTask(boolean done, int id) {
-        return crudRepository.run("UPDATE Task SET done = :done WHERE id = :id AND done <> :done",
+        return crudRepository.run("UPDATE Task t SET t.done = :done WHERE t.id = :id AND t.done <> :done",
                 Map.of("done", done, "id", id)) > 0;
     }
 
     @Override
     public List<Task> getAllTasks() {
-        return crudRepository.query("FROM Task", Task.class);
+        return crudRepository.query("FROM Task t JOIN FETCH t.priority", Task.class);
     }
 
     @Override
     public List<Task> getNewOrDoneTasks(boolean done) {
-        return crudRepository.query("FROM Task WHERE done = :done", Task.class,
+        return crudRepository.query("FROM Task t JOIN FETCH t.priority WHERE t.done = :done", Task.class,
                 Map.of("done", done));
     }
 }

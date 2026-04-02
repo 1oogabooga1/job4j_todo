@@ -16,7 +16,16 @@
         <div class="mb-3">
             <label for="description" class="form-label"><b>Description</b></label>
             <textarea class="form-control" id="description" name="description"
-                      th:field="*{description}" rows="20" placeholder="Task description"></textarea>
+                      th:field="*{description}" rows="15" placeholder="Task description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="priority"><b>Priority</b></label>
+            <select class="form-control" id="priority" th:field="*{priority.id}">
+                <option th:each="priority : ${priorities}"
+                        th:value="${priority.id}"
+                        th:text="${priority.name}">
+                </option>
+            </select>
         </div>
         <div class="mb-3 row">
             <div class="col-6"></div>
