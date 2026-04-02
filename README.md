@@ -102,4 +102,17 @@ mvn spring-boot:run
 
 <img width="1439" height="424" alt="Снимок экрана 2026-03-31 в 12 25 04" src="https://github.com/user-attachments/assets/a3ba02aa-64dc-43bd-9471-6c8bdb72e1e1" />
 
+---
+
+## New update - priorities
+
+<img width="1440" height="900" alt="Снимок экрана 2026-04-02 в 16 48 15" src="https://github.com/user-attachments/assets/b0296315-da6c-4d81-af70-e9f11848a1df" />
+
+<img width="1435" height="862" alt="Снимок экрана 2026-04-02 в 16 53 45" src="https://github.com/user-attachments/assets/2412720f-1030-4235-b366-ce92f57e0081" />
+
+<img width="1439" height="864" alt="Снимок экрана 2026-04-02 в 16 49 36" src="https://github.com/user-attachments/assets/8b45f7dd-e8a0-41b7-90ef-2d913002e870" />
+
+<img width="1440" height="891" alt="Снимок экрана 2026-04-02 в 16 50 29" src="https://github.com/user-attachments/assets/5f334599-e239-48e3-a835-1f13355012ad" />
+
+<img width="1440" height="602" alt="Снимок экрана 2026-04-02 в 16 50 33" src="https://github.com/user-attachments/assets/bcca267b-3f06-4447-9a6b-736608551d08" />
 
