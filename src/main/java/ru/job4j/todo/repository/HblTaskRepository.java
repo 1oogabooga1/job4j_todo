@@ -24,7 +24,8 @@ public class HblTaskRepository implements TaskRepository {
 
     @Override
     public Optional<Task> findById(int id) {
-        return crudRepository.optional("FROM Task t JOIN FETCH t.priority WHERE t.id = :id", Task.class, Map.of("id", id));
+        return crudRepository.optional("SELECT DISTINCT t FROM Task t JOIN FETCH t.priority LEFT JOIN FETCH t.categories "
+                + "WHERE t.id = :id", Task.class, Map.of("id", id));
     }
 
     @Override
@@ -34,17 +35,18 @@ public class HblTaskRepository implements TaskRepository {
 
     @Override
     public boolean editTask(Task task, int id) {
-        return crudRepository.run("UPDATE Task SET "
-                + "name = :name, "
-                + "description = :description, "
-                + "done = :done, "
-                + "priority = :priority "
-                + "WHERE id = :id",
-                Map.of("name", task.getName(),
-                "description", task.getDescription(),
-                "done", task.isDone(),
-                "priority", task.getPriority(),
-                "id", id)) > 0;
+        return crudRepository.tx(session -> {
+            Task taskInDb = session.get(Task.class, id);
+            if (taskInDb == null) {
+                return false;
+            }
+            taskInDb.setName(task.getName());
+            taskInDb.setDescription(task.getDescription());
+            taskInDb.setDone(task.isDone());
+            taskInDb.setPriority(task.getPriority());
+            taskInDb.setCategories(task.getCategories());
+            return true;
+        });
     }
 
     @Override
@@ -55,12 +57,12 @@ public class HblTaskRepository implements TaskRepository {
 
     @Override
     public List<Task> getAllTasks() {
-        return crudRepository.query("FROM Task t JOIN FETCH t.priority", Task.class);
+        return crudRepository.query("SELECT DISTINCT t FROM Task t JOIN FETCH t.priority LEFT JOIN FETCH t.categories", Task.class);
     }
 
     @Override
     public List<Task> getNewOrDoneTasks(boolean done) {
-        return crudRepository.query("FROM Task t JOIN FETCH t.priority WHERE t.done = :done", Task.class,
+        return crudRepository.query("SELECT DISTINCT t FROM Task t JOIN FETCH t.priority LEFT JOIN FETCH t.categories WHERE t.done = :done", Task.class,
                 Map.of("done", done));
     }
 }

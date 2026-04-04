@@ -15,6 +15,8 @@
     <include file="db/scripts/005_ddl_create_table_priorities.sql"/>
     <include file="db/scripts/006_dml_insert_table_priorities.sql"/>
     <include file="db/scripts/007_alter_table_tasks_add_priority_id.sql"/>
-
+    <include file="db/scripts/008_ddl_create_table_categories.sql"/>
+    <include file="db/scripts/009_ddl_create_table_categories_tasks.sql"/>
+    <include file="db/scripts/010_dml_insert_into_categories.sql"/>
 
 </databaseChangeLog>

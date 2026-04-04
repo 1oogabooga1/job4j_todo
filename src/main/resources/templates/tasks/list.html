@@ -15,18 +15,24 @@
                 <th scope="col">Status</th>
                 <th scope="col">User name</th>
                 <th scope="col">Priority</th>
+                <th scope="col">Categories</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="task : ${tasks}">
                 <td th:text="${task.id}"></td>
-                <td> <a th:text="${task.name}"
-                th:href="@{/tasks/{taskId}(taskId=${task.id})}"></a>
+                <td><a th:text="${task.name}"
+                       th:href="@{/tasks/{taskId}(taskId=${task.id})}"></a>
                 </td>
                 <td th:text="${#temporals.format(task.created, 'dd.MM.yyyy HH:mm')}"></td>
                 <td th:text="${task.done} ? 'Complete' : 'In process'"></td>
                 <td th:text="${task.user.name}"></td>
                 <td th:text="${task.priority.name}"></td>
+                <td>
+                    <span th:each="category, stat : ${task.categories}">
+                        <span th:text="${category.name}"></span><span th:if="${!stat.last}">, </span>
+                    </span>
+                </td>
             </tr>
             </tbody>
         </table>

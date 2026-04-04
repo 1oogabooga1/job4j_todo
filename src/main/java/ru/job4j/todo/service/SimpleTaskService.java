@@ -1,23 +1,25 @@
 package ru.job4j.todo.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.job4j.todo.model.Task;
+import ru.job4j.todo.repository.CategoryRepository;
 import ru.job4j.todo.repository.TaskRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class SimpleTaskService implements TaskService {
 
     private final TaskRepository hblTaskRepository;
 
-    public SimpleTaskService(TaskRepository hblTaskRepository) {
-        this.hblTaskRepository = hblTaskRepository;
-    }
+    private final CategoryRepository categoryRepository;
 
     @Override
-    public Task createNewTask(Task task) {
+    public Task createNewTask(Task task, List<Integer> ids) {
+        task.setCategories(categoryRepository.findById(ids));
         return hblTaskRepository.createNewTask(task);
     }
 
@@ -32,7 +34,8 @@ public class SimpleTaskService implements TaskService {
     }
 
     @Override
-    public boolean editTask(Task task, int id) {
+    public boolean editTask(Task task, int id, List<Integer> ids) {
+        task.setCategories(categoryRepository.findById(ids));
         return hblTaskRepository.editTask(task, id);
     }
 

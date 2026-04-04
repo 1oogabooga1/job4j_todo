@@ -6,8 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.todo.model.Task;
 import ru.job4j.todo.model.User;
+import ru.job4j.todo.service.CategoryService;
 import ru.job4j.todo.service.PriorityService;
 import ru.job4j.todo.service.TaskService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/tasks")
@@ -18,6 +21,8 @@ public class TaskController {
 
     private final PriorityService priorityService;
 
+    private final CategoryService categoryService;
+
     @GetMapping("/list")
     public String getAll(Model model) {
         model.addAttribute("tasks", service.getAllTasks());
@@ -27,13 +32,16 @@ public class TaskController {
     @GetMapping("/create")
     public String getCreationPage(Model model) {
         model.addAttribute("priorities", priorityService.getAll());
+        model.addAttribute("categories", categoryService.getAll());
         return "tasks/create";
     }
 
     @PostMapping("/create")
-    public String createTask(@ModelAttribute Task task, @SessionAttribute("user") User user) {
+    public String createTask(@ModelAttribute Task task,
+                             @RequestParam(required = false) List<Integer> categoryIds,
+                             @SessionAttribute("user") User user) {
         task.setUser(user);
-        service.createNewTask(task);
+        service.createNewTask(task, categoryIds);
         return "redirect:/tasks/list";
     }
 
@@ -58,12 +66,15 @@ public class TaskController {
         }
         model.addAttribute("task", taskOptional.get());
         model.addAttribute("priorities", priorityService.getAll());
+        model.addAttribute("categories", categoryService.getAll());
         return "tasks/task";
     }
 
     @PostMapping("/edit/{id}")
-    public String editTask(Model model, @PathVariable int id, @ModelAttribute Task task) {
-        var isEdited = service.editTask(task, id);
+    public String editTask(Model model, @PathVariable int id,
+                           @RequestParam(required = false) List<Integer> categoryIds,
+                           @ModelAttribute Task task) {
+        var isEdited = service.editTask(task, id, categoryIds);
         if (!isEdited) {
             model.addAttribute("message", "Ошибка при редактировании задачи");
             return "errors/404";
@@ -85,7 +96,7 @@ public class TaskController {
     public String delete(Model model, @PathVariable int id) {
         boolean result = service.deleteTask(id);
         if (!result) {
-            model.addAttribute("message", "Некорректный номер задания");
+            model.addAttribute("message", "Task id is incorrect");
             return "errors/404";
         }
         return "redirect:/tasks/list";
