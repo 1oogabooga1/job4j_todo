@@ -90,29 +90,28 @@ mvn spring-boot:run
 
 <img width="1440" height="596" alt="Снимок экрана 2026-03-31 в 12 24 16" src="https://github.com/user-attachments/assets/f6d346ef-cf6e-41f5-8f98-964bbfd5d4f7" />
 
-<img width="1440" height="806" alt="Снимок экрана 2026-03-31 в 12 22 30" src="https://github.com/user-attachments/assets/0c994a96-d782-43b1-8029-a9df0d9f99d3" />
+<img width="1436" height="831" alt="Снимок экрана 2026-04-04 в 19 56 48" src="https://github.com/user-attachments/assets/0f490fe5-b334-44df-ba0a-1ecb1854e45e" />
 
-<img width="1439" height="541" alt="Снимок экрана 2026-03-31 в 12 23 59" src="https://github.com/user-attachments/assets/78591174-dea2-4c08-8275-5f279583098b" />
+<img width="1440" height="802" alt="Снимок экрана 2026-04-04 в 19 57 42" src="https://github.com/user-attachments/assets/eb5e0719-9f7f-4829-8a12-6bf1759c42f3" />
 
-<img width="1440" height="530" alt="Снимок экрана 2026-03-31 в 12 23 21" src="https://github.com/user-attachments/assets/636171a6-a3d1-4724-98d8-54ae4e56b0c7" />
+<img width="1435" height="816" alt="Снимок экрана 2026-04-04 в 19 58 50" src="https://github.com/user-attachments/assets/656d837e-ef18-4c57-8db7-16e17bdfd563" />
 
-<img width="1440" height="529" alt="Снимок экрана 2026-03-31 в 12 24 04" src="https://github.com/user-attachments/assets/354f71c1-5afe-43a2-860a-0997d3981585" />
+<img width="1440" height="712" alt="Снимок экрана 2026-04-04 в 19 59 04" src="https://github.com/user-attachments/assets/a55192e5-6c82-498f-a22b-66bd02675771" />
 
-<img width="1437" height="390" alt="Снимок экрана 2026-03-31 в 12 24 36" src="https://github.com/user-attachments/assets/66f2a2d2-99ef-4af7-8f83-64a465cfe5ff" />
+<img width="1439" height="591" alt="Снимок экрана 2026-04-04 в 19 59 21" src="https://github.com/user-attachments/assets/476e0e71-8a3b-4994-b5bf-e34ad999f01d" />
 
-<img width="1439" height="424" alt="Снимок экрана 2026-03-31 в 12 25 04" src="https://github.com/user-attachments/assets/a3ba02aa-64dc-43bd-9471-6c8bdb72e1e1" />
+<img width="1440" height="651" alt="Снимок экрана 2026-04-04 в 19 59 29" src="https://github.com/user-attachments/assets/8efaa97f-4b39-42de-8a04-d1ee2f6de145" />
 
----
+<img width="1438" height="816" alt="Снимок экрана 2026-04-04 в 20 03 12" src="https://github.com/user-attachments/assets/2650e160-d54e-4519-943a-a3df14be9513" />
 
-## New update - priorities
+<img width="1440" height="642" alt="Снимок экрана 2026-04-04 в 20 03 26" src="https://github.com/user-attachments/assets/a67e4205-1a90-4eec-92b0-e9b28160774b" />
 
-<img width="1440" height="900" alt="Снимок экрана 2026-04-02 в 16 48 15" src="https://github.com/user-attachments/assets/b0296315-da6c-4d81-af70-e9f11848a1df" />
+<img width="1440" height="460" alt="Снимок экрана 2026-04-04 в 20 03 42" src="https://github.com/user-attachments/assets/53a043b8-1c4f-47bb-8c81-50831e67f309" />
 
-<img width="1435" height="862" alt="Снимок экрана 2026-04-02 в 16 53 45" src="https://github.com/user-attachments/assets/2412720f-1030-4235-b366-ce92f57e0081" />
+<img width="1440" height="461" alt="Снимок экрана 2026-04-04 в 20 04 02" src="https://github.com/user-attachments/assets/852a8a60-04b3-4d74-918b-941624e6e68a" />
 
-<img width="1439" height="864" alt="Снимок экрана 2026-04-02 в 16 49 36" src="https://github.com/user-attachments/assets/8b45f7dd-e8a0-41b7-90ef-2d913002e870" />
 
-<img width="1440" height="891" alt="Снимок экрана 2026-04-02 в 16 50 29" src="https://github.com/user-attachments/assets/5f334599-e239-48e3-a835-1f13355012ad" />
 
-<img width="1440" height="602" alt="Снимок экрана 2026-04-02 в 16 50 33" src="https://github.com/user-attachments/assets/bcca267b-3f06-4447-9a6b-736608551d08" />
+
+
 
