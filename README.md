@@ -1,4 +1,4 @@
-## Job4j Todo Application
+# Todo Application
 
 A simple Todo web application built with Spring Boot, Thymeleaf, Hibernate, and PostgreSQL.
 This project allows users to create, edit, delete, and track tasks with a clean and user-friendly interface.
@@ -6,12 +6,14 @@ This project allows users to create, edit, delete, and track tasks with a clean 
 ## Features
 
 - Task Management:
-  - Create new tasks with descriptions.
+  - Create new tasks with title, description, priority and categories.
   - Edit existing tasks, including marking them as completed.
   - Delete tasks.
 
 - Task Status:
   - Display task status as "Completed" or "In process".
+  - Display task priority such as "urgently", "normal" or "unnecessary"
+  - Display task categories such as "sports", "daily", "studies" and "free time".
 
 - Task Listing:
   - View all tasks or filter by completed / new tasks.
