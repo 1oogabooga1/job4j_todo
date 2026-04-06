@@ -1,5 +1,7 @@
 # Todo Application
 
+![CI GitHubAction](https://github.com/1oogabooga1/job4j_todo/actions/workflows/maven.yml/badge.svg)
+
 A simple Todo web application built with Spring Boot, Thymeleaf, Hibernate, and PostgreSQL.
 This project allows users to create, edit, delete, and track tasks with a clean and user-friendly interface.
 
