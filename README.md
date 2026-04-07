@@ -92,7 +92,9 @@ mvn spring-boot:run
 
 <img width="1439" height="547" alt="Снимок экрана 2026-03-31 в 12 21 25" src="https://github.com/user-attachments/assets/053ccc05-6765-40db-a7ee-2e8da5c28a94" />
 
-<img width="1440" height="596" alt="Снимок экрана 2026-03-31 в 12 24 16" src="https://github.com/user-attachments/assets/f6d346ef-cf6e-41f5-8f98-964bbfd5d4f7" />
+<img width="1440" height="717" alt="Снимок экрана 2026-04-07 в 15 48 26" src="https://github.com/user-attachments/assets/91e00925-3058-40e9-a745-8debab35a9d7" />
+
+<img width="1440" height="899" alt="Снимок экрана 2026-04-07 в 15 48 36" src="https://github.com/user-attachments/assets/2fec4205-d7b0-4d61-ab27-c7349f2815bd" />
 
 <img width="1436" height="831" alt="Снимок экрана 2026-04-04 в 19 56 48" src="https://github.com/user-attachments/assets/0f490fe5-b334-44df-ba0a-1ecb1854e45e" />
 
