@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import ru.job4j.todo.model.Task;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -17,7 +16,6 @@ public class HblTaskRepository implements TaskRepository {
 
     @Override
     public Task createNewTask(Task task) {
-        task.setCreated(LocalDateTime.now());
         crudRepository.run(session -> session.save(task));
         return task;
     }

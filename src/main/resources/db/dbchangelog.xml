@@ -18,5 +18,7 @@
     <include file="db/scripts/008_ddl_create_table_categories.sql"/>
     <include file="db/scripts/009_ddl_create_table_categories_tasks.sql"/>
     <include file="db/scripts/010_dml_insert_into_categories.sql"/>
+    <include file="db/scripts/011_dml_alter_table_todo_user_add_column_user_zone.sql"/>
+    <include file="db/scripts/012_dml_alter_table_tasks_edit_column_created.sql"/>
 
 </databaseChangeLog>
